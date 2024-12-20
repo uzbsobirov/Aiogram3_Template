@@ -29,7 +29,8 @@ async def do_start(message: types.Message):
     username = message.from_user.username
     user = None
     try:
-        user = await db.add_user(telegram_id=telegram_id, full_name=full_name, username=username)
+        user = await db.add_user(telegram_id=telegram_id, full_name=full_name, username=username, phone=None, job=None,
+                                 goal=None)
     except Exception as error:
         logger.info(error)
     if user:
